@@ -22,15 +22,6 @@
 
 @implementation BMLeftTrayVC
 
-#pragma mark - View Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor blueColor];
-}
-
-
 #pragma mark - Public API
 
 - (id)initWithContentVC:(UIViewController *)aContentVC tabView:(UIView *)aTabView {
