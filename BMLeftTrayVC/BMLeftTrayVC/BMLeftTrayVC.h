@@ -10,6 +10,9 @@
 
 @interface BMLeftTrayVC : UIViewController
 
-@property (nonatomic) UIViewController *contentVC;
+- (id)initWithContentVC:(UIViewController *)contentVC tabView:(UIView *)tabView;
+
+//@property (nonatomic) UIViewController *contentVC;
+//@property (nonatomic) UIView *tabView;
 
 @end

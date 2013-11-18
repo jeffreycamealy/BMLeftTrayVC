@@ -21,6 +21,7 @@
 		00301559183A825A00199FBC /* BMLeftTrayVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301558183A825A00199FBC /* BMLeftTrayVCTests.m */; };
 		00301566183A82F100199FBC /* BMLeftTrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301565183A82F100199FBC /* BMLeftTrayVC.m */; };
 		0030156A183A856A00199FBC /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301569183A856A00199FBC /* RootVC.m */; };
+		27451D95B5E1444D8315C401 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD014F0B1EB4D059725CEAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		00301565183A82F100199FBC /* BMLeftTrayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMLeftTrayVC.m; path = BMLeftTrayVC/BMLeftTrayVC.m; sourceTree = "<group>"; };
 		00301568183A856A00199FBC /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
 		00301569183A856A00199FBC /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
+		4BD014F0B1EB4D059725CEAF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A20FF031334A139BC72C9D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = CocoaPods/Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 				00301536183A825A00199FBC /* CoreGraphics.framework in Frameworks */,
 				00301538183A825A00199FBC /* UIKit.framework in Frameworks */,
 				00301534183A825A00199FBC /* Foundation.framework in Frameworks */,
+				27451D95B5E1444D8315C401 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +91,7 @@
 				00301552183A825A00199FBC /* BMLeftTrayVCTests */,
 				00301532183A825A00199FBC /* Frameworks */,
 				00301531183A825A00199FBC /* Products */,
+				90A20FF031334A139BC72C9D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +111,7 @@
 				00301535183A825A00199FBC /* CoreGraphics.framework */,
 				00301537183A825A00199FBC /* UIKit.framework */,
 				0030154C183A825A00199FBC /* XCTest.framework */,
+				4BD014F0B1EB4D059725CEAF /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,7 +122,6 @@
 				00301562183A82C900199FBC /* AppDelegate */,
 				00301567183A855B00199FBC /* RootVC */,
 				00301563183A82D000199FBC /* BMLeftTrayVC */,
-				00301545183A825A00199FBC /* Images.xcassets */,
 				0030153A183A825A00199FBC /* Supporting Files */,
 			);
 			path = BMLeftTrayVC;
@@ -125,6 +130,7 @@
 		0030153A183A825A00199FBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00301545183A825A00199FBC /* Images.xcassets */,
 				0030153B183A825A00199FBC /* BMLeftTrayVC-Info.plist */,
 				0030153C183A825A00199FBC /* InfoPlist.strings */,
 				0030153F183A825A00199FBC /* main.m */,
@@ -185,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0030155C183A825A00199FBC /* Build configuration list for PBXNativeTarget "BMLeftTrayVC" */;
 			buildPhases = (
+				59CC83EA3BB24859B8779B97 /* Check Pods Manifest.lock */,
 				0030152C183A825A00199FBC /* Sources */,
 				0030152D183A825A00199FBC /* Frameworks */,
 				0030152E183A825A00199FBC /* Resources */,
+				078D774CC5404638A0A0D752 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +275,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		078D774CC5404638A0A0D752 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/CocoaPods/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59CC83EA3BB24859B8779B97 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0030152C183A825A00199FBC /* Sources */ = {
@@ -394,6 +435,7 @@
 		};
 		0030155D183A825A00199FBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A20FF031334A139BC72C9D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -407,6 +449,7 @@
 		};
 		0030155E183A825A00199FBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A20FF031334A139BC72C9D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -479,6 +522,7 @@
 				0030155E183A825A00199FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0030155F183A825A00199FBC /* Build configuration list for PBXNativeTarget "BMLeftTrayVCTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +531,7 @@
 				00301561183A825A00199FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
