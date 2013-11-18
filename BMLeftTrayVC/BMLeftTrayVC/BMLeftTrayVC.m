@@ -67,6 +67,8 @@
         make.centerY.equalTo(contentVC.view.centerY);
         make.height.equalTo(@(tabView.frame.size.height));
         make.width.equalTo(@(tabView.frame.size.width));
+        
+        make.right.lessThanOrEqualTo(self.view.right);
     }];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tabTapped:)];
@@ -85,7 +87,7 @@
 - (void)collapse {
     if (!collapsed) {
         [contentVC.view makeConstraints:^(MASConstraintMaker *make) {
-            collapsedConstraint = make.right.equalTo(self.view.left).with.priority(MASLayoutPriorityRequired-1);
+            collapsedConstraint = make.right.equalTo(self.view.left).with.priority(MASLayoutPriorityDefaultHigh+1);
         }];
     }
     [self updateCollapsedConstraint];
@@ -108,15 +110,13 @@
 
 - (void)tabPanned:(UIPanGestureRecognizer *)recognizer {
     CGPoint locationInView = [recognizer locationInView:self.view];
-//    float offset = locationInView.x - locationInTab.x;
-//    NSLog(@"offset: %f", offset);
     
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
             CGPoint locationInTab = [recognizer locationInView:tabView];
             panningTabOffset = locationInTab.x;
             [contentVC.view makeConstraints:^(MASConstraintMaker *make) {
-                panningConstraint = make.right.equalTo(self.view.left).with.offset(locationInView.x-panningTabOffset);
+                panningConstraint = make.right.equalTo(self.view.left).with.offset(locationInView.x-panningTabOffset).with.priority(MASLayoutPriorityDefaultHigh+2);
             }];
         }
             break;
