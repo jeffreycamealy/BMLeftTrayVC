@@ -1,0 +1,4 @@
+platform :ios, '7.0'
+xcodeproj '../BMLeftTrayVC.xcodeproj'
+
+pod 'Masonry', '0.3.0'

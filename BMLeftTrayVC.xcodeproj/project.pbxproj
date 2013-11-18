@@ -19,6 +19,8 @@
 		0030154F183A825A00199FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00301537183A825A00199FBC /* UIKit.framework */; };
 		00301557183A825A00199FBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00301555183A825A00199FBC /* InfoPlist.strings */; };
 		00301559183A825A00199FBC /* BMLeftTrayVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301558183A825A00199FBC /* BMLeftTrayVCTests.m */; };
+		00301566183A82F100199FBC /* BMLeftTrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301565183A82F100199FBC /* BMLeftTrayVC.m */; };
+		0030156A183A856A00199FBC /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00301569183A856A00199FBC /* RootVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		00301554183A825A00199FBC /* BMLeftTrayVCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMLeftTrayVCTests-Info.plist"; sourceTree = "<group>"; };
 		00301556183A825A00199FBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00301558183A825A00199FBC /* BMLeftTrayVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMLeftTrayVCTests.m; sourceTree = "<group>"; };
+		00301564183A82F100199FBC /* BMLeftTrayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMLeftTrayVC.h; path = BMLeftTrayVC/BMLeftTrayVC.h; sourceTree = "<group>"; };
+		00301565183A82F100199FBC /* BMLeftTrayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMLeftTrayVC.m; path = BMLeftTrayVC/BMLeftTrayVC.m; sourceTree = "<group>"; };
+		00301568183A856A00199FBC /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
+		00301569183A856A00199FBC /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +113,9 @@
 		00301539183A825A00199FBC /* BMLeftTrayVC */ = {
 			isa = PBXGroup;
 			children = (
-				00301542183A825A00199FBC /* AppDelegate.h */,
-				00301543183A825A00199FBC /* AppDelegate.m */,
+				00301562183A82C900199FBC /* AppDelegate */,
+				00301567183A855B00199FBC /* RootVC */,
+				00301563183A82D000199FBC /* BMLeftTrayVC */,
 				00301545183A825A00199FBC /* Images.xcassets */,
 				0030153A183A825A00199FBC /* Supporting Files */,
 			);
@@ -142,6 +149,33 @@
 				00301555183A825A00199FBC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00301562183A82C900199FBC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				00301542183A825A00199FBC /* AppDelegate.h */,
+				00301543183A825A00199FBC /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		00301563183A82D000199FBC /* BMLeftTrayVC */ = {
+			isa = PBXGroup;
+			children = (
+				00301564183A82F100199FBC /* BMLeftTrayVC.h */,
+				00301565183A82F100199FBC /* BMLeftTrayVC.m */,
+			);
+			name = BMLeftTrayVC;
+			sourceTree = "<group>";
+		};
+		00301567183A855B00199FBC /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				00301568183A856A00199FBC /* RootVC.h */,
+				00301569183A856A00199FBC /* RootVC.m */,
+			);
+			name = RootVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0030156A183A856A00199FBC /* RootVC.m in Sources */,
+				00301566183A82F100199FBC /* BMLeftTrayVC.m in Sources */,
 				00301544183A825A00199FBC /* AppDelegate.m in Sources */,
 				00301540183A825A00199FBC /* main.m in Sources */,
 			);
