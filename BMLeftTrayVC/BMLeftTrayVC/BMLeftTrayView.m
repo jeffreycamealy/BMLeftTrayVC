@@ -35,6 +35,10 @@
     return self;
 }
 
+- (void)toggleExpandCollapse {
+    collapsed ? [self expand] : [self collapse];
+}
+
 
 #pragma mark - Private API
 
@@ -47,9 +51,6 @@
         make.left.equalTo(self.left).with.priority(MASLayoutPriorityDefaultHigh);
         make.left.lessThanOrEqualTo(self.left);
     }];
-    
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tabTapped:)];
-    [contentView addGestureRecognizer:tapGestureRecognizer];
     
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trayPanned:)];
     [contentView addGestureRecognizer:panGestureRecognizer];
@@ -80,10 +81,6 @@
 
 
 #pragma mark - Action Methods 
-
-- (void)tabTapped:(UITapGestureRecognizer *)recognizer {
-    collapsed ? [self expand] : [self collapse];
-}
 
 - (void)trayPanned:(UIPanGestureRecognizer *)recognizer {
     CGPoint locationInView = [recognizer locationInView:self];

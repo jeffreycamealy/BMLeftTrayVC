@@ -12,9 +12,6 @@
 
 - (id)initWithContentView:(UIView *)contentView collapseWidth:(float)collapseWidth;
 
-//- (id)initWithContentVC:(UIViewController *)contentVC tabView:(UIView *)tabView;
-
-//@property (nonatomic) UIViewController *contentVC;
-//@property (nonatomic) UIView *tabView;
+- (void)toggleExpandCollapse;
 
 @end
