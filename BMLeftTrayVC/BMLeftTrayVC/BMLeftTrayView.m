@@ -50,6 +50,7 @@
         make.bottom.equalTo(self.bottom);
         make.left.equalTo(self.left).with.priority(MASLayoutPriorityDefaultHigh);
         make.left.lessThanOrEqualTo(self.left);
+        make.right.greaterThanOrEqualTo(self.left).with.offset(collapseWidth);
     }];
     
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(trayPanned:)];
