@@ -20,7 +20,7 @@
 @end
 
 
-#warning - If user panned on button, view will unclose (not intended behavior)
+// TODO: If user panned on button, view will unclose (not intended behavior)
 @implementation BMLeftTrayView
 
 #pragma mark - Public API
